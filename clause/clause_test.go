@@ -11,7 +11,7 @@ func TestClause_Set(t *testing.T) {
 	sql := clause.sql[INSERT]
 	vars := clause.sqlVars[INSERT]
 	t.Log(sql, vars)
-	if sql != "INSERT INTO User (Name, Age)" || len(vars) != 0 {
+	if sql != "INSERT INTO User (Name,Age)" || len(vars) != 0 {
 		t.Fatal("failed to set clause")
 	}
 }

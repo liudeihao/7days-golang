@@ -1,6 +1,8 @@
 package clause
 
-import "strings"
+import (
+	"strings"
+)
 
 type Type int
 
