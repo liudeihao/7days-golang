@@ -38,7 +38,7 @@ func (r *router) addRoute(method string, pattern string, handler HandlerFunc) {
         r.roots[method] = &node{}
     }
     parts := parsePattern(pattern)
-    r.roots[method].insert(parts, pattern)
+    r.roots[method].insert(pattern, parts, 0)
 
     key := method + " - " + pattern
     r.handlers[key] = handler
@@ -51,7 +51,7 @@ func (r *router) getRoute(method string, path string) (*node, map[string]string)
     if !ok {
         return nil, nil
     }
-    n := root.search(pathParts)
+    n := root.search(pathParts, 0)
     if n == nil {
         return nil, nil
     }
