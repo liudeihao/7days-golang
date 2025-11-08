@@ -1,4 +1,4 @@
-package main
+package geecache
 
 type ByteView struct {
     b []byte
